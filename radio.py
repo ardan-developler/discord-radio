@@ -46,7 +46,7 @@ async def on_message(message):
 
             embed.set_author(name=message.author.name + '#' + message.author.discriminator)
             embed.add_field(name=':red_circle: Live **월하_라디오 방송 종료 알림**', value='라디오 방송이 종료됩니다. 청취해주셔서 감사합니다.', inline=False)
-            embed.set_footer(text='Requested by • ' + message.author.name + '#' + message.author.discriminator + "\n EventTime " + now, icon_url=message.author.avatar_url)
+            embed.set_footer(text='Requested by • ' + message.author.name + '#' + message.author.discriminator, icon_url=message.author.avatar_url)
             await client.send_message(message.channel, "<@&623518005648949257>", embed=embed)
 
 
