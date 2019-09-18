@@ -11,6 +11,7 @@ client = discord.Client()
 
 status = ["WolHa_Radio | WolHa", "By ArdanKR_#3402"]
 radio = ['584372821195620354', '543428999418871828']
+now = datetime.datetime.now()
 mention = ["message.author.name + '#' + message.author.discriminator"]
 
     # 543428999418871828 = ArdanKR_#3402 , 584372821195620354 = 시나KR#9741
@@ -35,7 +36,7 @@ async def on_message(message):
 
             embed.set_author(name=message.author.name + '#' + message.author.discriminator)
             embed.add_field(name=':red_circle: Live **월하_라디오 시작 알림**', value='라디오가 시작됩니다. 청취자 여러분들은 채널을 <#623174984474558464>로 맞춰주시기 바랍니다.', inline=False)
-            embed.set_footer(text='Requested by • ' + message.author.name + '#' + message.author.discriminator, icon_url=message.author.avatar_url)
+            embed.set_footer(text='Requested by • ' + message.author.name + '#' + message.author.discriminator + 'EventTime • ' + datetime.datetime.now(), icon_url=message.author.avatar_url)
             await client.send_message(message.channel, "<@&623505873519509504>", embed=embed)
 
     if message.content.startswith('+stop_radio'):
@@ -45,7 +46,7 @@ async def on_message(message):
 
             embed.set_author(name=message.author.name + '#' + message.author.discriminator)
             embed.add_field(name=':red_circle: Live **월하_라디오 방송 종료 알림**', value='라디오 방송이 종료됩니다. 청취해주셔서 감사합니다.', inline=False)
-            embed.set_footer(text='Requested by • ' + message.author.name + '#' + message.author.discriminator, icon_url=message.author.avatar_url)
+            embed.set_footer(text='Requested by • ' + message.author.name + '#' + message.author.discriminator + 'EventTime • ' + datetime.datetime.now(), icon_url=message.author.avatar_url)
             await client.send_message(message.channel, "<@&623518005648949257>", embed=embed)
 
 
